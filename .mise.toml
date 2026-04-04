@@ -1,0 +1,12 @@
+[tools]
+python = "3.13"
+
+[env]
+# Tell mise to use uv to create and source the virtual environment
+# "create|source" ensures it is created if missing when entering the directory
+_.python.venv = { path = ".venv", create = true }
+UV_PYTHON = { value = "{{ tools.python.path }}", tools = true }
+
+[settings]
+python.uv_venv_auto = "create|source"
+
